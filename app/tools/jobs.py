@@ -1,3 +1,4 @@
+import os
 import requests
 from pprint import PrettyPrinter
 from dotenv import load_dotenv
@@ -23,7 +24,6 @@ def get_jobs_list(details: str, location: str, company: str):
     
     if response.status_code == 200:
         data = response.json()
-        pp.pprint(data)
         return data
 
 def get_job_details(job_id: str):
@@ -37,5 +37,4 @@ def get_job_details(job_id: str):
     
     if response.status_code == 200:
         data = response.json()
-        pp.pprint(data)
         return data
